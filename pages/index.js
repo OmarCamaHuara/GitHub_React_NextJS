@@ -3,15 +3,21 @@ import { lazy, Suspense } from 'react';
 
 const Imagem = lazy(() => import('./Imagen'));
 const Rodape = lazy(() => import('./Rodape'))
+const Texto = lazy(() => import('./Texto'))
 
 import "isomorphic-fetch";
 
 const HomeGitHub = ({ usuarios }) => (
     <div>
 
+        <h1>Fotos dos usuarios de GitHub</h1>
 
         <Suspense fallback={ <p>Carregando ...</p> }>
             <Imagem />
+        </Suspense>
+
+        <Suspense fallback={ <p>Carregando ...</p> }>
+            <Texto />
         </Suspense>
 
         { usuarios.map(usr => 

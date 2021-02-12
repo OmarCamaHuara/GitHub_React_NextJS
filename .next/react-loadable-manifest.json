@@ -1,0 +1,28 @@
+{
+  "./Imagen": [
+    {
+      "id": "./node_modules/next/dist/compiled/webpack/module.js",
+      "file": "static/chunks/2.js"
+    },
+    {
+      "id": "./pages/Imagen.js",
+      "file": "static/chunks/2.js"
+    }
+  ],
+  "./Rodape": [
+    {
+      "id": "./node_modules/next/dist/compiled/webpack/module.js",
+      "file": "static/chunks/1.js"
+    },
+    {
+      "id": "./pages/Rodape.js",
+      "file": "static/chunks/1.js"
+    }
+  ],
+  "./dev/noop": [
+    {
+      "id": "./node_modules/next/dist/client/dev/noop.js",
+      "file": "static/chunks/0.js"
+    }
+  ]
+}

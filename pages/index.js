@@ -1,34 +1,46 @@
 import React from 'react';
-import { lazy, Suspense } from 'react';
 
-const Imagem = lazy(() => import('./Imagen'));
-const Rodape = lazy(() => import('./Rodape'))
-const Texto = lazy(() => import('./Texto'))
+
+import Texto from './Texto';
+import Rodape from './Rodape';
+
 
 import "isomorphic-fetch";
 
 const HomeGitHub = ({ usuarios }) => (
     <div>
-
-        <h1>Fotos dos usuarios de GitHub</h1>
-
-        <Suspense fallback={ <p>Carregando ...</p> }>
-            <Imagem />
-        </Suspense>
-
-        <Suspense fallback={ <p>Carregando ...</p> }>
-            <Texto />
-        </Suspense>
-
-        { usuarios.map(usr => 
-            <div>
-                <img style={{ width: 150, borderRadius: 75 }} src={usr.avatar_url} alt="Foto de Usuario"/>
-                <h2 style={{ textAlign: "center" }} key={usr.id}>{usr.login}</h2> 
+        <h1 style={{
+            textAlign: 'center'
+        }}>Fotos dos usuarios de GitHub</h1>
+        <Texto />
+        <div style={{
+            margin:0,
+            flexDirection: 'row',
+            display: 'flex',
+            flexWrap: 'wrap',
+            height: '100%',
+            width: '80%',
+            alignItems: 'center'
+        }}>
+            <div style={{
+                display: 'inline-block',
+                width: '25%',
+                flex: '0 1 25%',
+                textAlign: 'center',
+                margin: '0 auto',
+                display: "inline-block" 
+            }}>
+            
+                { usuarios.map(usr => 
+                    <div>
+                        <img style={{ width: 150, borderRadius: 75 }} src={usr.avatar_url} alt="Foto de Usuario"/>
+                        <h2 style={{ textAlign: "center" }} key={usr.id}>{usr.login}</h2> 
+                    </div>
+                )}
+                
             </div>
-        )}
-        <Suspense fallback={ <p>Carregando ...</p> }>
-            <Rodape />   
-        </Suspense>    
+        </div>
+        <Rodape />   
     </div>
 )
 

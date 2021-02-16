@@ -10,3 +10,4 @@ function Rodape(){
         </a>
     )
 }
+export default Rodape;
